@@ -239,7 +239,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
         if (showNotification) {
             Intent intent = new Intent(this, OnNotificationOpenReceiver.class);
             intent.putExtras(bundle);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id.hashCode(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id.hashCode(), intent, PendingIntent.FLAG_IMMUTABLE);
 
             // Channel
             if(channelId == null || !FirebasePlugin.channelExists(channelId)){
